@@ -4,7 +4,7 @@ const cart = document.querySelector("tbody");
 const tabCart = document.querySelector(".cart");
 const toggleCart = document.querySelector(".shop-icon");
 const bodyModal= document.querySelector(".modal-body");
-const addModalBtn=document.querySelectorAll(".heart-icon")
+const addModalBtn=document.querySelectorAll(".view-icon")
 toggleCart.addEventListener("click", () => {
   tabCart.classList.toggle("active");
 });
@@ -44,15 +44,15 @@ function addToModal(img, name, priceSale, priceRaw){
                             <p>Size</p>
                             <div class="sizeBoxoption">
                               <div
-                                class="sizeOption size37 "
+                                class="sizeOption size37 active "
                                 
                               >
                                 37
                               </div>
-                              <div class="sizeOption size38" >
+                              <div class="sizeOption size38"  >
                                 38
                               </div>
-                              <div class="sizeOption size39" >
+                              <div class="sizeOption size39"  >
                                 39
                               </div>
                               <div class="sizeOption size40" >
@@ -79,41 +79,33 @@ function addToModal(img, name, priceSale, priceRaw){
                   </div>
                 </div>`
          
-          bodyModal.innerHTML=contentModal;
-          var listSizeOption=document.querySelectorAll(".sizeOption")
-          listSizeOption.forEach((item)=>{
-            item.addEventListener("click",(e)=>{
-              listSizeOption.forEach((item)=>{
-                item.classList.remove("active")
-              })
-              e.target.classList.toggle("active");
-              var sizeItems=e.target.innerText;
-              renewAddToCart(img,name,priceSale,sizeItems);
-            })
-          })
-          // renewAddToCart(img,name,priceSale,defaultSizeItems);
+          bodyModal.innerHTML=contentModal;          
+          renewAddToCart(img,name,priceSale);
+          // changeSize()
           
 }
 //chức năng đổi size trong Modal
-
-// function changeSize(size) {
-//   var listSizeOption = document.querySelectorAll(
-//     ".newProduct .sizeBoxoption .sizeOption"
-//   );
-//   const sizeShoe = document.querySelector(
-//     ".newProduct .sizeBoxoption .sizeOption.size" + size
-//   );
-//   listSizeOption.forEach((item) => {
-//     item.classList.remove("active");
-//   });
-//   sizeShoe.classList.toggle("active");
-// }
-function renewAddToCart(img, name, price,size){
+function changeSize() {
+  var listSizeOption = document.querySelectorAll(
+    ".newProduct .sizeBoxoption .sizeOption"
+  );
+  listSizeOption.forEach((item)=>{
+      item.addEventListener("click",(e)=>{
+        listSizeOption.forEach((item)=>{
+          item.classList.remove("active")
+        })
+        e.target.classList.toggle("active");
+      })
+    })  
+}
+function renewAddToCart(img, name, price){
+  changeSize();
   var addbtn=document.querySelector(".cartBtn")
   addbtn.addEventListener("click",()=>{
     var check = 0;
   var listProduct = cart.querySelectorAll("tr");
   var productItem = document.createElement("tr");
+  var size=document.querySelector(".sizeOption.active ").innerText;
   var productContent = ` 
     <tr class="cartItems">
         <td class="imgItems">
@@ -151,9 +143,7 @@ function renewAddToCart(img, name, price,size){
       var itemimg = item.querySelector("img").src;
       var itemsize= item.querySelector(".sizeItems div").innerText;
       var amount = item.querySelector("input").value;
-      console.log("size input",size)
-      console.log("size", itemsize);
-      if (img == itemimg && name == itemName && size==itemsize) {
+      if (img == itemimg && name == itemName && size==itemsize ) {
         item.querySelector("input").value = parseInt(amount) + 1;
         check = 1;
       }

@@ -1334,18 +1334,18 @@ header .menu ul li {
 /* End Container */
 /* footer */
 .footer-container {
-  background-color: #212329;
-  padding: 10px 50px 30px 0;
+  background-color: #212329 !important;
+  padding: 10px 50px 30px 0 !important;
 }
 .footer {
-  width: 90%;
-  height: 42vh;
-  background-color: #212329;
-  color: #fff;
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  width: 90% !important;
+  height: 42vh !important;
+  background-color: #212329 !important;
+  color: #fff !important;
+  display: flex !important;
+  justify-content: left !important;
+  flex-wrap: wrap !important;
+  margin: 0 auto !important;
 }
 
 .footer-heading {
@@ -1354,7 +1354,8 @@ header .menu ul li {
   margin-right: 4rem;
 }
 .footer-heading h2 {
-  margin-bottom: 1rem;
+  font-size: 16px !important;
+  margin-bottom: 1rem !important;
 }
 .footer-heading a {
   color: #fff;
