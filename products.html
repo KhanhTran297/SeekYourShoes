@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/product.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/magnify.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Product</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header style="position: sticky">
+      <div class="box">
+        <div class="logo">
+          <a href="" class="logo-box">
+            <img src="./img/logo.jpg" alt="" />
+          </a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">PRODUCT</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="">SHOP</a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <form action="" class="search-box">
+            <input
+              type="text"
+              class="search-text"
+              placeholder="Tim Kiem"
+              required
+            />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="shop">
+          <i class="fa-solid fa-basket-shopping shop-icon"></i>
+        </div>
+        <div class="user">
+          <a href="#" class="user-box" onclick="onOfUseroptions()">
+            <img src="./img/namngu.jpg" alt="" />
+          </a>
+          <div class="user-dropdown">
+            <a href="">Thông tin cá nhân</a>
+            <a href="">Mục yêu Thích</a>
+            <a href="">Lịch sử giao dịch</a>
+            <a href="">Log out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Box Container -->
+    <div class="content">
+      <div class="boxContainer">
+        <div class="titleContainer">
+          <div class="boxTitle">
+            <h3>Men'Trainer & Shoes <span>(558)</span></h3>
+          </div>
+          <div class="boxBtn">
+            <div class="filter-btn" onclick="toggleFilterBox()">
+              <p>
+                Hide Filters
+                <i class="fa-solid fa-list"></i>
+              </p>
+            </div>
+            <div class="Sort-btn" onclick="activeDropDown()">
+              <p>
+                Sort by
+                <i class="fa-solid fa-arrow-down"></i>
+              </p>
+              <div class="dropDownWrapper">
+                <div class="sortDropDown">
+                  <a href="">Featured</a>
+                  <a href="">Newest</a>
+                  <a href="">Price: High-Low</a>
+                  <a href="">Price: Low-High</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bodyContainer">
+          <div class="filterContainer">
+            <div class="genderBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('genderBox')">
+                <p>Gender</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="female"
+                  name="gender"
+                  value="female"
+                />
+                <label for="female">Female</label>
+              </div>
+            </div>
+            <div class="onSaleBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('onSaleBox')">
+                <p>On Sale</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="sale" name="sale" value="sale" />
+                <label for="sale">Sale</label>
+              </div>
+            </div>
+            <div class="priceBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('priceBox')">
+                <p>Shop By Price</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="500" name="price" value="500" />
+                <label for="price">Under 500.000 VND</label>
+                <br />
+                <input type="checkbox" id="1000" name="price" value="1000" />
+                <label for="price">500.000 - 1.000.000 VND</label>
+                <br />
+                <input type="checkbox" id="2000" name="price" value="2000" />
+                <label for="price">Above 1.000.000 VND</label>
+              </div>
+            </div>
+            <div class="sizeBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('sizeBox')">
+                <p>Size</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <div class="sizeItemWrap">
+                  <div class="sizeItem">35.5</div>
+                  <div class="sizeItem">36</div>
+                  <div class="sizeItem">36.5</div>
+                  <div class="sizeItem">37.5</div>
+                  <div class="sizeItem">38</div>
+                  <div class="sizeItem">38.5</div>
+                  <div class="sizeItem">39</div>
+                  <div class="sizeItem">40</div>
+                  <div class="sizeItem">40.5</div>
+                  <div class="sizeItem">41</div>
+                  <div class="sizeItem">42</div>
+                  <div class="sizeItem">42.5</div>
+                </div>
+              </div>
+            </div>
+            <div class="colorBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('colorBox')">
+                <p>Colour</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <div class="colorItemWrap">
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: black"
+                      id="black"
+                    ></div>
+                    <span>Black</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: red"
+                    ></div>
+                    <span>Red</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: blue"
+                    ></div>
+                    <span>Blue</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: brown"
+                    ></div>
+                    <span>Brown</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: grey"
+                    ></div>
+                    <span>Grey</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: green"
+                    ></div>
+                    <span>Green</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: #fff"
+                    ></div>
+                    <span>White</span>
+                  </div>
+                  <div class="colorItem">
+                    <div
+                      class="colorOption"
+                      style="background-color: pink"
+                    ></div>
+                    <span>Pink</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="brandBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('brandBox')">
+                <p>Brand</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="nike" name="brand" value="nike" />
+                <label for="male">Nike</label>
+                <br />
+                <input type="checkbox" id="puma" name="brand" value="puma" />
+                <label for="female">Puma</label>
+                <br />
+                <input type="checkbox" id="vans" name="brand" value="vans" />
+                <label for="female">Vans</label>
+              </div>
+            </div>
+            <div class="materialBox filterBox">
+              <div
+                class="titleBox"
+                onclick="toggleFilterBoxItem('materialBox')"
+              >
+                <p>Material</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input
+                  type="checkbox"
+                  id="canvas"
+                  name="material"
+                  value="canvas"
+                />
+                <label for="male">Canvas</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="leather"
+                  name="material"
+                  value="leather"
+                />
+                <label for="female">Leather</label>
+              </div>
+            </div>
+          </div>
+          <div class="productContainer">
+            <div class="latest-product">
+              <div class="product-container">
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a  class="heart-icon" data-toggle="modal" data-target="#exampleModalCenter"
+                      ><i class="fa-solid fa-heart" ></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/7.png"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a href="" class="heart-icon" data-toggle="modal" data-target="#exampleModalCenter"
+                      ><i class="fa-solid fa-heart"></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/6.png"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a href="" class="heart-icon"
+                      ><i class="fa-solid fa-heart"></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/5.png"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a href="" class="heart-icon"
+                      ><i class="fa-solid fa-heart"></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/1.jpg"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a href="" class="heart-icon"
+                      ><i class="fa-solid fa-heart"></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/2.jpg"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                    <a href="" class="heart-icon"
+                      ><i class="fa-solid fa-heart"></i
+                    ></a>
+                    <a class="cart-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></a>
+                  </div>
+                  <div class="product-content">
+                    <img
+                      src="./img/product4/3.jpg"
+                      alt=""
+                      class="product-img"
+                    />
+                    <h3 class="product-name">Nike Shoes</h3>
+                    <div class="priceSaleBox">
+                      <div class="priceSale">200.000VND</div>
+                      <span class="price">150.000VND</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cart -->
+        <div class="cart">
+          <form action="">
+            <table>
+              <thead class="titleTable">
+                <tr>
+                  <th class="imgProduct">Product</th>
+                  <th class="nameProduct">Name</th>
+                  <th class="priceProduct">Price</th>
+                  <th class="sizeProduct">Size</th>
+                  <th class="amountsProduct">Amounts</th>
+                  <th class="optionProduct">Option</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </form>
+          <div class="totalPriceCart">
+            <p>Total: <span>0</span> <sub>VND</sub></p>
+          </div>
+        </div>
+        <!-- End Cart -->
+        <!-- Modals -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div> -->
+              <div class="modal-body">
+                <!-- <div class="newProduct">
+                
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                
+                  <div class="newProductContainer">
+                    <div class="newProductItem">
+                      <div class="newProductBox">
+                        <div class="productImg">
+                          <div class="productImgContent">
+                            <img src="./img/productred/1.jpg" alt="" class="bigImg1" />
+                          </div>
+                        </div>
+                        <div class="productContent">
+                          <h3 class="productName">NEW NIKE AIRMAC SHOES</h3>
+                          <div class="sizeBox">
+                            <p>Size</p>
+                            <div class="sizeBoxoption">
+                              <div
+                                class="sizeOption size37 active"
+                                onclick="changeSize(37)"
+                              >
+                                37
+                              </div>
+                              <div class="sizeOption size38" onclick="changeSize(38)">
+                                38
+                              </div>
+                              <div class="sizeOption size39" onclick="changeSize(39)">
+                                39
+                              </div>
+                              <div class="sizeOption size40" onclick="changeSize(40)">
+                                40
+                              </div>
+                              <div class="sizeOption size41" onclick="changeSize(41)">
+                                41
+                              </div>
+                            </div>
+                          </div>
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Dignissimos, repellendus magni alias, quibusdam rerum placeat
+                            sit ipsa velit dolorum nostrum hic laudantium commodi at quod
+                            voluptatem illum quae! Deserunt, optio!
+                          </p>
+                          <div class="price">
+                            <div class="price">200.000VND <span>150.000VND</span></div>
+                            <button class="cartBtn">ADD TO CART</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- End Modals -->
+      </div>
+    </div>
+    <!-- End BoxContainer -->
+    <!-- Footer -->
+    <div class="footer-container">
+      <div class="footer">
+        <div class="footer-heading footer-1">
+          <h2>GET HELP</h2>
+          <h2>BECOME A MEMBER</h2>
+          <h2>SIGN UP FOR EMAIL</h2>
+          <h2>SEND US FEEDBACK</h2>
+        </div>
+        <div class="footer-heading footer-2">
+          <h2>GET HELP</h2>
+          <a href="#">Order Status</a>
+          <a href="#">Delivery</a>
+          <a href="#">Returns</a>
+          <a href="#">Payment Options</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-heading footer-3">
+          <h2>ABOUT US</h2>
+          <a href="#">News</a>
+          <a href="#">Careers</a>
+          <a href="#">Investors</a>
+          <a href="#">Sustainability</a>
+        </div>
+        <div class="footer-email-form">
+          <h2>Join our newsletter</h2>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            id="footer-email"
+          />
+          <input type="submit" value="Sign up" id="footer-email-btn" />
+        </div>
+        <div class="footer-payment-container">
+          <h2>PAYMENT</h2>
+          <img width="250px" src="./img/footer/payment.jpg" alt="" />
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="copyright-container">
+          <p>©2023 SeekYourShoes. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+    <!-- End footer -->
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

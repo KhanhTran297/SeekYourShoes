@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/profile.css">
+    <title>Profile</title>
+</head>
+<body  style="height: 100%;">
+    <!-- Header -->
+    <header style="position: sticky">
+        <div class="box">
+          <div class="logo">
+            <a href="" class="logo-box">
+              <img src="./img/logo.jpg" alt="" />
+            </a>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="products.html">PRODUCT</a></li>
+              <li><a href="">CONTACT</a></li>
+              <li><a href="">SHOP</a></li>
+            </ul>
+          </div>
+          <div class="search">
+            <form action="" class="search-box">
+              <input
+                type="text"
+                class="search-text"
+                placeholder="Tim Kiem"
+                required
+              />
+              <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+          <div class="shop">
+            <i class="fa-solid fa-basket-shopping shop-icon"></i>
+          </div>
+          <div class="user">
+            <a href="#" class="user-box" onclick="onOfUseroptions()">
+              <img src="./img/namngu.jpg" alt="" />
+            </a>
+            <div class="user-dropdown">
+              <a href="">Thông tin cá nhân</a>
+              <a href="">Mục yêu Thích</a>
+              <a href="">Lịch sử giao dịch</a>
+              <a href="">Log out</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- End Header -->
+      <div class="wrapper">
+        <div class="leftWrapper">
+            <div class="titleLeft">
+                <div class="imgBox">
+                    <img src="./img/namngu.jpg" alt="">
+                </div>
+                <p>Change avatar</p>
+            </div>
+            <div class="bodyLeft">
+                <div class="profileOption selectOption " onclick={activeProfileTab()}>
+                    <i class="fa-solid fa-user"></i>
+                    <p>Profile</p>
+                </div>
+                <div class="cartOption selectOption" onclick={activeCartTab()}>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Cart</p>
+                </div>
+            </div>
+        </div>
+        <div class="rightWrapper">
+            <div class="profileTab active" >
+              <h1 class="titleTab">Profile</h1>
+                <form action="">
+                    <div class="input-form">
+                        <label for="name">Fullname:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    
+                    <div class="input-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="input-form">
+                        <label for="address">Address:</label>
+                        <input type="address" id="address" name="address">
+                    </div>
+                    
+                    <div class="input-form">
+                        <label for="phonenumber">Phonenumber:</label>
+                        <input type="phonenumber" id="phonenumber" name="phonenumber">
+                    </div>
+                   
+                   <div class="input-form">
+                        <input type="submit" value="Update Profile">
+                   </div> 
+                </form>
+            </div>
+            <div class="cartTab" >
+                <h1 class="titleTab">Cart</h1>
+                <form action="">
+                  <table>
+                    <thead class="titleTable">
+                      <tr>
+                        <th class="imgProduct">Product</th>
+                        <th class="nameProduct">Name</th>
+                        <th class="priceProduct">Price</th>
+                        <th class="amountsProduct">Amounts</th>
+                        <th class="optionProduct">Option</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="cartItems">
+                        <td class="imgItems">
+                            <div class="">
+                                <img src="./img/product4/5.png" alt="" />
+                            </div>
+                        </td>
+                        <td class="nameItems">
+                            <div class="">
+                                <p>Nike Shoes</p>
+                            </div>
+                        </td>
+                        <td class="priceItems">
+                            <div class="">200.000VND</div>
+                        </td>
+                        <td class="amountsItems">
+                            <div class="">
+                                <input type="number" value="1" min="1" />
+                            </div>
+                        </td>
+                        <td class="deleteProductOption">
+                            <div class="boxDeleteBtn">
+                                <div class="deleteBtn" >Delete all</div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </form>
+                <div class="totalPriceCart">
+                <p>Total: <span>200.000</span> <sub>VND</sub></p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <script src="./js/profile.js"></script>
+</body>
+</html>
