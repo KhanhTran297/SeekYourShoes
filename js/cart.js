@@ -154,6 +154,8 @@ function renewAddToCart(img, name, price){
   if (check == 0) {
     cart.append(productItem);
   }
+  // var amountCartHeader=document.querySelector(".shop span")
+  // amountCartHeader.innerText=listProduct.length;
   deleteCart();
   calculateTotalPrice();
   inputChange();
@@ -243,4 +245,9 @@ function inputChange() {
       calculateTotalPrice();
     });
   });
+}
+// chức năng open/close useroptions
+function onOfUseroptions() {
+  let useritem = document.querySelector(".user-dropdown");
+  useritem.classList.toggle("active");
 }

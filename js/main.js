@@ -47,7 +47,6 @@ listImgFeatures3.forEach((item) => {
 const listSizeOption = document.querySelectorAll(
   ".newProduct .sizeBoxoption .sizeOption"
 );
-console.log(listSizeOption);
 function changeSize(size) {
   const sizeShoe = document.querySelector(
     ".newProduct .sizeBoxoption .sizeOption.size" + size
