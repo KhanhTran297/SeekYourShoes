@@ -18,16 +18,6 @@ addModalBtn.forEach((item)=>{
     addToModal(imgProduct, nameProduct, priceSale, priceRaw);
     });
 });
-
-addcartBtn.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    var product = e.target.closest(".product-item");
-    var imgProduct = product.querySelector(".product-img").src;
-    var nameProduct = product.querySelector(".product-name").innerText;
-    var priceProduct = product.querySelector(".priceSale").innerText;
-    addToCart(imgProduct, nameProduct, priceProduct);
-  });
-});
 function addToModal(img, name, priceSale, priceRaw){
   var contentModal=`  <div class="newProduct">
                   <div class="newProductContainer">
@@ -160,60 +150,6 @@ function renewAddToCart(img, name, price){
   calculateTotalPrice();
   inputChange();
   })
-}
-function addToCart(img, name, price) {
-  var check = 0;
-  var listProduct = cart.querySelectorAll("tr");
-  var productItem = document.createElement("tr");
-  var productContent = ` 
-    <tr class="cartItems">
-        <td class="imgItems">
-            <div class="">
-                <img src=${img} alt="" />
-            </div>
-        </td>
-        <td class="nameItems">
-            <div class="">
-                <p>${name}</p>
-            </div>
-        </td>
-        <td class="priceItems">
-            <div class="">${price}</div>
-        </td>
-        <td class="amountsItems">
-            <div class="">
-                <input type="number" value="1" min="1" />
-            </div>
-        </td>
-        <td class="deleteProductOption">
-            <div class="boxDeleteBtn">
-                <div class="deleteBtn" >Delete all</div>
-            </div>
-        </td>
-    </tr>`;
-  productItem.innerHTML = productContent;
-  if (listProduct.length > 0) {
-    listProduct.forEach((item) => {
-      var itemName = item.querySelector(".nameItems p").innerText;
-
-      var itemimg = item.querySelector("img").src;
-
-      var amount = item.querySelector("input").value;
-
-      if (img == itemimg && name == itemName) {
-        item.querySelector("input").value = parseInt(amount) + 1;
-        check = 1;
-      }
-    });
-  } else {
-    cart.append(productItem);
-  }
-  if (check == 0) {
-    cart.append(productItem);
-  }
-  deleteCart();
-  calculateTotalPrice();
-  inputChange();
 }
 function calculateTotalPrice() {
   var listProductItems = document.querySelectorAll("tbody tr");
